@@ -1,0 +1,14 @@
+{% stylesheets filter='cssrewrite'
+    'bundles/ezdemo/css/video.css'
+    'bundles/ezdemo/css/bootstrap.css'
+    'bundles/ezplatformuiassets/vendors/flag-icon-css/css/flag-icon.min.css'
+    'bundles/ezsystemsprivacycookie/css/privacycookie.css'
+%}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+{% endstylesheets %}
+
+{% if ezpublish.legacy is defined %}
+<style type="text/css">
+    @import url("{{ asset('extension/ezwt/design/standard/stylesheets/websitetoolbar.css') }}");
+</style>
+{% endif %}

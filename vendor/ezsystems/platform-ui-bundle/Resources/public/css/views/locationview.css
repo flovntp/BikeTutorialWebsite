@@ -1,0 +1,31 @@
+/**
+ * Copyright (C) eZ Systems AS. All rights reserved.
+ * For full copyright and license information view LICENSE file distributed with this source code.
+ */
+
+.ez-view-locationviewview > .pure-g {
+    padding-right: 230px;
+    transition: all 0.30s ease-in-out;
+}
+
+.ez-view-locationviewview.is-actionbar-minimized > .pure-g {
+    padding-right: 4em;
+}
+
+.ez-view-locationviewview .ez-actionbar-container {
+    width: 230px;
+    margin-right: -230px;
+}
+
+.ez-view-locationviewview.is-actionbar-minimized .ez-actionbar-container {
+    width: 4em;
+    margin-right: -4em;
+}
+
+.ez-view-locationviewview .ez-locationview-content {
+    width: 100%;
+}
+
+.ez-view-locationviewview .ez-subitemlist-container {
+    padding: 0 2em 2em 2em;
+}

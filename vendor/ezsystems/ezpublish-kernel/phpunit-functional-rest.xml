@@ -1,0 +1,15 @@
+<phpunit
+  backupGlobals="false"
+  backupStaticAttributes="false"
+  bootstrap="bootstrap.php"
+  convertErrorsToExceptions="true"
+  convertNoticesToExceptions="true"
+  convertWarningsToExceptions="true"
+  colors="false"
+  >
+  <testsuites>
+    <testsuite name="REST API Functional tests">
+      <directory>eZ/Bundle/EzPublishRestBundle/Tests/Functional</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

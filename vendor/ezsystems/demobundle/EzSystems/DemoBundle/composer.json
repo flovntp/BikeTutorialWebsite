@@ -1,0 +1,33 @@
+{
+    "name": "ezsystems/demobundle",
+    "description": "Demo bundle for eZ Publish Platform",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "eZ Publish dev-team & eZ Community",
+            "homepage": "https://github.com/ezsystems/DemoBundle/graphs/contributors"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "ezsystems/ezpublish-kernel": "~6.0@beta",
+        "ezsystems/comments-bundle": "~6.0@beta",
+        "ezsystems/platform-ui-assets-bundle": "~1.0@beta",
+        "whiteoctober/breadcrumbs-bundle": "~1.0.1",
+        "knplabs/knp-menu-bundle": "1.*",
+        "zetacomponents/feed": "~1.4",
+        "ezsystems/demobundle-data": "~1.0@beta",
+        "components/bootstrap": "3.3.2",
+        "ezsystems/privacy-cookie-bundle": "~1.0@beta"
+    },
+    "autoload": {
+        "psr-0": {"EzSystems\\DemoBundle": ""}
+    },
+    "target-dir": "EzSystems/DemoBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.0.x-dev"
+        }
+    }
+}

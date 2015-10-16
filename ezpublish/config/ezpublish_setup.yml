@@ -1,0 +1,14 @@
+ezpublish:
+    siteaccess:
+        list: ['setup']
+        groups: []
+        default_siteaccess: 'setup'
+        match:
+            URIElement: '1'
+
+stash:
+    caches:
+        default:
+            drivers: [ BlackHole ]
+            inMemory: true
+            registerDoctrineAdapter: false

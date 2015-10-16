@@ -1,0 +1,65 @@
+{% extends "eZDemoBundle::pagelayout.html.twig" %}
+
+{% block content %}
+<section class="content-view-full">
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="attribute-header">
+                <h1>{{ ez_render_field( content, 'name' ) }}</h1>
+            </div>
+
+            <div class="attribute-short">
+                {{ ez_render_field( content, 'description' ) }}
+            </div>
+
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <p class="form-success">
+                    {{ flashMessage }}
+                </p>
+
+            {% else %}
+                {%  form_theme form 'eZDemoBundle:forms:feedback_form.html.twig' %}
+
+                {{ form_start( form ) }}
+
+                {{ form_row( form.firstName, {
+                    'label': 'First Name',
+                    'label_attr': { 'class': 'control-label' },
+                    'attr': { 'class': 'col-md-4' }
+                } ) }}
+
+                {{ form_row( form.lastName, {
+                    'label': 'Last Name',
+                    'attr': { 'class': 'col-md-4' }
+                } ) }}
+
+                {{ form_row( form.email, {
+                    'label': 'Email',
+                    'attr': { 'class': 'col-md-6' }
+                } ) }}
+
+                {{ form_row( form.subject, {
+                    'label': 'Subject',
+                    'attr': { 'class': 'col-md-6' }
+                } ) }}
+
+                {{ form_row( form.country, { 'label': 'Country' } ) }}
+
+                {{ form_row( form.message, {
+                    'label': 'Message',
+                    'attr': { 'class': 'col-md-8', 'rows': 10 }
+                } ) }}
+
+                {{ form_row( form.save, {
+                    'label': "Send form",
+                    'attr': { 'class': 'btn btn-warning pull-right' }
+                } ) }}
+
+                {{ form_end( form ) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+.idea/
+.php_cs
+.travis.yml
+composer.phar
+web/bundles
+web/css
+web/js
+ezpublish/cache
+ezpublish/logs

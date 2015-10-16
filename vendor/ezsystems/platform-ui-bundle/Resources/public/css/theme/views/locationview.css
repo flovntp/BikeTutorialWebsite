@@ -1,0 +1,18 @@
+/**
+ * Copyright (C) eZ Systems AS. All rights reserved.
+ * For full copyright and license information view LICENSE file distributed with this source code.
+ */
+
+.ez-locationview-content {
+    background: #fff;
+}
+
+.ez-view-locationviewview .ez-actionbar-container {
+    background: #333;
+    margin-top: -1px; /* to align the action bar with bottom border of navigation hub */
+    transition: all 0.30s ease-in-out;
+}
+
+.ez-view-locationviewview header {
+    background: #f5f4f2;
+}

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-menu" aria-expanded="false" aria-controls="navbar-menu">
+            {{ "Navigation"|trans }}
+        </button>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-menu navbar-top">
+        <div class="container">
+            {{ knp_menu_render(menu, {'depth': 1}) }}
+        </div>
+    </div>
+
+    {% if submenu is defined %}
+        <div class="navbar-collapse collapse navbar-menu navbar-sublevel">
+            <div class="container">
+                {{ knp_menu_render(submenu, {'branch_class': 'nav'}) }}
+            </div>
+        </div>
+    {% endif %}
+</nav>

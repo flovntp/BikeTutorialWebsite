@@ -1,0 +1,23 @@
+{% set fileSize = ez_field_value( content, 'file' ).fileSize|ez_file_size( 4 ) %}
+{% set dateModified = content.contentInfo.modificationDate|localizeddate( 'short', 'short', app.request.locale ) %}
+{% set downloadPath = path( ez_route( 'ez_content_download', { 'content': content, 'fieldIdentifier': 'file' } ) ) %}
+
+<div class="content-view-line">
+    <div class="attribute-header">
+        <h2>
+            <a href="{{ path( 'ez_urlalias', { 'contentId': content.id } ) }}" class="teaser-link">{{ ez_content_name( content ) }}</a>
+        </h2>
+    </div>
+
+    <article class="class-file file-to-download">
+        <div class="header">
+            <span class="file-size">{{ 'File size:'|trans }} {{ fileSize }}</span>
+            <span class="modified-date">({{ 'Modified:'|trans }} {{ dateModified }})</span>
+            <a href="{{ downloadPath }}" class="pull-right">{{ 'Download file'|trans }}</a>
+        </div>
+
+        <div class="description">
+            {{ ez_render_field( content, 'description' ) }}
+        </div>
+    </article>
+</div>

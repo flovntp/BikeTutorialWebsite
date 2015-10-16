@@ -1,0 +1,40 @@
+{% extends "eZDemoBundle::pagelayout.html.twig" %}
+{% block content %}
+<div>
+    <div class="row">
+        <div class="col-md-6 place-name">
+            <h1>{{ ez_render_field( content, 'name' ) }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% if not ez_is_field_empty( content, 'image' ) %}
+            <div class="col-md-6">
+                {{ ez_render_field(
+                    content,
+                    'image',
+                    {
+                        'template': 'eZDemoBundle:fields:ezobjectrelation_image.html.twig',
+                        'parameters': {
+                            'alias': 'imageplacesize',
+                            'class': 'place-image'
+                        }
+                    } )
+                }}
+            </div>
+            <div class="col-md-4">
+        {% else %}
+            <div class="col-md-10">
+        {% endif %}
+                {{ ez_render_field(
+                    content, 'location', { 'attr': { 'class': 'place-location' }, 'parameters':{ 'showInfo':false, 'width': '100%', 'zoom' : 16 } }
+                    )
+                }}
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            {{ ez_render_field( content, 'description', { 'attr': { 'class': 'place-description' }, } ) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+a {
+  .transition(color linear 0.2s)
+}
+
+a.teaser-link,
+.content-view-line .attribute-header a {
+  color: @linkColor;
+  .transition(color linear 0.2s);
+  h2, h3, h4, h5 {
+    color: @linkColor;
+    .transition(color linear 0.2s);
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @orange;
+    h2, h3, h4, h5 {
+      color: @orange;
+    }
+  }
+}
+
+.highlighted {
+  a.teaser-link {
+    color: @white;
+    h2, h3, h4, h5 {
+      color: @white;
+    }
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: @orange;
+      h2, h3, h4, h5 {
+        color: @orange;
+      }
+    }
+  }
+}
+
+.attribute-byline.with-comments a.comments {
+  color: @gray;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: @linkColorHover;
+  }
+}

@@ -1,0 +1,215 @@
+.navbar {
+  margin-bottom: 0;
+  min-height: 0;
+  border: 0;
+  .nav {
+    float: right;
+    min-height: 33px;
+    > li {
+      display: block;
+      float: left;
+      border-left: 1px solid rgba(0, 135, 178, 0.52);
+      border-right: 1px solid rgba(13, 92, 120, 0.42);
+      > a {
+        padding: 5px 10px;
+        text-shadow: 1px 1px 0 rgba(0,0,0,.45);
+        color: #ebebeb;
+        background: inherit;
+        &:hover {
+          background: inherit;
+        }
+      }
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+  .breadcrumb-wrapper {
+    border-bottom: 1px solid @grayLighter;
+  }
+  &.extra-navi {
+    position: relative;
+    .nav {
+      background: transparent url('../images/bgr-extra-navi.png') no-repeat center bottom;
+      > li {
+        border: none;
+        position: relative;
+        > a {
+          color: @navbarSublevelLinkColor;
+          padding: 3px 10px 4px;
+          text-shadow: none;
+          &:hover {
+            color: @navbarSublevelLinkColorHover;
+          }
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    #lang-selector {
+      .current-lang {
+        display: block;
+        position: absolute;
+        left: 170px;
+        top: 0;
+      }
+      a {
+        display: inline-block;
+        padding: 5px 10px;
+      }
+      ul {
+        margin: 0;
+        background-color: @blue;
+        position: absolute;
+        left: 170px;
+        top: -1000px;
+        z-index: 15;
+        padding: 0;
+        #gradient > .vertical(@blue, @blueDark);
+        .border-radius(0px 0px 3px 3px);
+        .box-shadow(0 5px 5px rgba(0,0,0,0.35));
+        .transition(top 0.2s ease);
+        > li {
+          list-style-type: none;
+          padding-bottom: 2px;
+        }
+        > .current {
+          background: @blueDarker;
+          padding: 5px 10px;
+          color: @white;
+        }
+      }
+      &:target {
+        ul {
+          overflow: hidden;
+          top: 0;
+        }
+        a {
+          color: @white;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.flag-icon {
+  width: 18px;
+  height: 12px;
+  margin-right: 5px;
+}
+
+.extra-navi .navbar-collapse {
+  margin-top: -1px;
+}
+
+.navbar-menu {
+  border: none;
+}
+
+.navbar-header {
+  min-height: 33px;
+}
+
+.navbar-header, .navbar-top {
+  #gradient > .vertical(@blue, @blueDark);
+}
+
+.navbar-sublevel {
+  #gradient > .vertical(@softwhite, @grayLighter);
+  border-bottom: 1px solid @grayLight !important;
+  box-shadow: none;
+  .nav > li {
+    border-left-color: @softwhite;
+    border-right-color: @grayLight;
+    > a {
+      color: @navbarSublevelLinkColor;
+      text-shadow: none;
+      &:hover {
+        color: @navbarSublevelLinkColorHover;
+      }
+    }
+  }
+}
+
+.navbar-header {
+  padding: 5px 20px;
+}
+
+.navbar-toggle {
+  margin: 0 ;
+  padding: 3px 5px;
+  border: 1px solid @grayLight;
+  font-size: 16px;
+  text-align: left;
+  color: @grayLower;
+  width: 100%;
+  font-weight: 400;
+  #gradient > .vertical(@softwhite, @grayLighter);
+  .box-shadow(inset 0 18px 0 @white);
+  &:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    .sprite(transparent, -132px, -28px);
+    right: 7px;
+    top: 7px;
+  }
+  &:active {
+    background: @black;
+    #gradient > .vertical(@grayLighter, @grayLighter);
+    .box-shadow(inset 0 18px 0 @grayLighter);
+    color: @black;
+    border-color: @grayLighter;
+  }
+}
+
+// responsive behavior
+
+@media (max-width: 480px) {
+  .navbar-menu ul li {
+    line-height: 32px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar .nav {
+    float: none;
+    > li {
+      border: none;
+      float: none;
+    }
+  }
+  .container {
+    margin: 0 20px;
+  }
+  .navbar-header {
+    display: block;
+  }
+  .navbar-menu {
+    .container {
+      margin: 0;
+    }
+    ul {
+      margin: 5px;
+      li {
+        font-weight: bold;
+        &:hover {
+          .border-radius(4px);
+          background: #006A8D;
+          a:hover {
+            .border-radius(4px);
+            color: @white;
+          }
+        }
+      }
+    }
+  }
+}

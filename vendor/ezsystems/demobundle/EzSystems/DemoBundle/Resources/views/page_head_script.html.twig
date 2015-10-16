@@ -1,0 +1,24 @@
+
+<script type="text/javascript">
+var YUI3_config = {base: "{{ asset( 'bundles/ezplatformuiassets/vendors/yui3/build/' ) }}", modules: {}, combine: false};
+</script>
+
+{% javascripts
+    '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'
+    '%kernel.root_dir%/../vendor/components/bootstrap/js/bootstrap.min.js'
+    '@eZPlatformUIAssetsBundle/Resources/public/vendors/yui3/build/yui/yui-min.js'
+    '@eZDemoBundle/Resources/public/js/ezflyout.js'
+    '@eZDemoBundle/Resources/public/js/ezgallery.js'
+    '@eZDemoBundle/Resources/public/js/ezgallerynavigator.js'
+    '@eZDemoBundle/Resources/public/js/ezsimplegallery.js'
+    '@eZDemoBundle/Resources/public/js/handle_transition.js'
+    '@eZDemoBundle/Resources/public/js/heightresize.js'
+    '@eZDemoBundle/Resources/public/js/init_ua.js'
+    '@eZDemoBundle/Resources/public/js/insertmedia.js'
+    '@eZDemoBundle/Resources/public/js/toggle_class.js'
+    '@eZDemoBundle/Resources/public/js/video.js'
+    '@eZDemoBundle/Resources/public/js/hinclude.js'
+    'bundles/ezsystemsprivacycookie/js/privacycookie.js'
+%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}

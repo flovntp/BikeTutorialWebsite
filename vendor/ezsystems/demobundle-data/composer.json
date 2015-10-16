@@ -1,0 +1,15 @@
+{
+    "name": "ezsystems/demobundle-data",
+    "description": "Data for ezsystems/demobundle",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "eZ Systems dev team",
+            "email": "dev-team@ez.no"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "ezsystems/demobundle": "*"
+    }
+}
